@@ -49,3 +49,11 @@ Thumbs.db
 *.wmv
 
 .project
+data/xlsx/simionity_AT.xlsx
+data/xlsx/simionity_BE.xlsx
+data/xlsx/simionity_CH.xlsx
+data/xlsx/simionity_DE.xlsx
+data/xlsx/simionity_DK.xlsx
+data/xlsx/simionity_FR.xlsx
+data/xlsx/simionity_LU.xlsx
+data/xlsx/simionity_NL.xlsx
