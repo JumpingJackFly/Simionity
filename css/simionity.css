@@ -1,0 +1,102 @@
+
+:root {
+  --tab-text-size: 1.0em;
+}
+
+.top-buffer { 
+	margin-top: 20px; 
+}
+
+.bottom-buffer { 
+	margin-bottom: 20px; 
+}
+
+.bottom-big-buffer { 
+	margin-bottom: 200px; 
+}
+
+.left-buffer { 
+	margin-left: 20px; 
+}
+
+.help-block {
+	color: rgb(153,153,153);
+	font-size: 0.9em;
+}
+	
+.tab-content > .active {
+	display: inline-block;
+	max-width: 100%;
+	font-size: var(--tab-text-size);
+}
+
+.nav-link {
+	font-size: var(--tab-text-size);
+}
+
+.nav-tabs .nav-link.disabled {
+	cursor: not-allowed; 
+	color: rgb(216,216,216);
+	font-size: var(--tab-text-size);
+}
+
+.PastRowStyle {
+	text-decoration: line-through;
+	color: rgb(216,216,216);
+	font-size: var(--tab-text-size);
+}	
+
+.PastHiddenLink {
+	color: rgb(216,216,216);
+	text-decoration: none !important;
+}	
+
+.ActiveRowStyle {
+	color: #000000;
+	font-size: var(--tab-text-size);
+}	
+
+.ActiveHiddenLink {
+	color: #000000;
+	text-decoration: none !important;
+}	
+
+.ExpireRowStyle {
+	color: red;
+	font-size: var(--tab-text-size);
+}	
+
+.ExpireHiddenLink {
+	color: red;
+	text-decoration: none !important;
+}	
+
+.FutureRowStyle {
+	color: rgb(0, 163, 0);
+	font-size: var(--tab-text-size);
+}	
+
+.FutureHiddenLink {
+	color: rgb(0, 163, 0);
+	text-decoration: none !important;
+}	
+
+.simHeaderColumnStyle, .simFooterColumnStyle  {
+	background-color: rgb(0,68,148);
+	color: white;
+	font-size: var(--tab-text-size);
+}
+
+.noteAsterisque {
+	/* color: blue; */
+}
+
+.adv-options-link .collapsed .active {
+    transform: rotate(180deg);
+    position: absolute;
+}
+
+.adv-options-link .active {
+    transform: rotate(0deg);
+    position: absolute;
+}

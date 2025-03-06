@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">   
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./lib/bootstrap-4.6.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./lib/fontawesome-free-5.13.0/css/all.min.css" />    
+ 	<link rel="stylesheet" type="text/css" media="screen" href="./lib/bootstrap-table-1.21.2/dist/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="./lib/bootstrap-table-1.21.2/dist/extensions/sticky-header/bootstrap-table-sticky-header.css">
+ 	
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/simionity.css"/>    
+</head>
+
+<body>
+	<div id="container" >
+		<div class="row top-buffer bottom-buffer left-buffer">
+			<h1>Comparateur des différentes offres d'abonnements et forfaits de recharge rapide en DC / THP</h1><span>&nbsp;<sub>v4.1.0</sub></span>
+		</div>
+		<br/>
+		<form id="simio_form" name="simio_form" action="" method="" autocomplete="on">
+			<div class="row top-buffer left-buffer">
+				<div id="simio_form_div" class="col-sm-4">
+					<div class="form-group row">
+						<label class="col-sm-6 form-control-label" for="simio_pays">Pays de déplacement</label>
+						<div class="col-sm-6">
+							<select id="simio_pays" class="form-control form-control-md" style="width:auto">
+								<option value="DE">Allemagne</option>
+								<option value="AT">Autriche</option>					
+								<option value="BE">Belgique</option>
+								<option value="DK">Danemark</option>
+								<!-- <option value="ES">Espagne</option> -->
+								<option value="FR" selected="">France</option>
+								<!-- <option value="IT">Italie</option> -->
+								<option value="LU">Luxembourg</option>
+								<!-- <option value="NO">Norvège</option> -->
+								<option value="NL">Pays-Bas</option>								
+								<!-- <option value="SE">Suède</option> -->
+								<option value="CH">Suisse</option>
+							</select>
+							<p class="help-block">Sélection du pays</p>
+						</div>
+						<label class="col-sm-6 form-control-label" for="simio_kms">Prévision de kilométrage (km)</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control form-control-md" id="simio_kms" name="simio_kms" min="1" value="1000" required>
+							<p class="help-block">Kilométrage total pour un simple voyage ou prévision sur la durée (voir paramètre suivant)</p>
+						</div>
+						<label class="col-sm-6 form-control-label" for="simio_duree">Durée (mois)</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control form-control-md" id="simio_duree" name="simio_duree" min="1" value="12" required>
+							<p class="help-block">Période totale pour la réalisation du kilométrage envisagé.</p>
+						</div>
+						<label class="col-sm-6 form-control-label" for="simio_conso">Consommation moyenne (kWh/100)</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control form-control-md" id="simio_conso" name="simio_conso" min="1" value="22" required>
+							<p class="help-block">A ajuster en fonction de vos habitudes de conduite, des conditions météo, 100% autoroute, etc.</p>
+						</div>
+						<label class="col-sm-6 form-control-label" for="simio_puissance">Puissance moyenne de recharge (kW)</label>
+						<div class="col-sm-6">
+							<input type="number" class="form-control form-control-md" id="simio_puissance" name="simio_puissance" min="1" value="150" required>
+							<p class="help-block">A adapter en fonction de la saison et de la possibilité ou pas de pré-conditionnement de la batterie.</p>
+						</div>
+					</div>					
+				</div>
+				<div class="col-sm-4 my-auto">		
+					<img src="./img/nuage-mots-500.png" width="350px" alt="Opérateurs"> 
+        		</div>
+			</div>
+			<div class="row left-buffer adv-options-link">
+				<div id="simio_form_div2" class="col-sm-4">
+					<a href="#avancees" data-toggle="collapse" class="collapsed" style="text-decoration: none">
+					Paramètres avancéss&nbsp;&nbsp;
+					<span class="active">
+						<em class="fas fa-caret-square-up" style="font-size:18px"></em>
+					</span>
+					</a>
+				</div>
+			</div>
+			<div class="row top-buffer bottom-buffer left-buffer">
+				<div id="simio_form_div3" class="col-sm-4">
+					<div id="avancees" class="collapse">
+						<div class="form-group row">
+							<label class="col-sm-6 form-control-label" for="filtre_op">Filtre Opérateur(s)</label>		
+							<div class="col-sm-6 id="filtre_op">
+								<div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="Ionity" id="filtre_op_ionity">
+								  <label class="form-check-label" for="filtre_op_ionity">
+								    Ionity
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="IECharge" id="filtre_op_iecharge">
+								  <label class="form-check-label" for="filtre_op_iecharge">
+								    IECharge
+								  </label>
+								</div>
+								<div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="Fastned" id="filtre_op_fastned">
+								  <label class="form-check-label" for="filtre_op_fastned">
+								    Fastned
+								  </label>
+								</div>
+								<!-- 
+								<div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="Tesla" id="filtre_op_tesla">
+								  <label class="form-check-label" for="filtre_op_tesla">
+								    Tesla
+								  </label>
+								</div>
+								 -->
+								<div class="form-check">
+								  <input class="form-check-input" type="checkbox" value="TotalEnergies" id="filtre_op_totalenergies">
+								  <label class="form-check-label" for="filtre_op_totalenergies">
+								    TotalEnergies
+								  </label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-6 form-control-label" for="simio_bcmh">Bonus/Crédit CMH (€)</label>
+							<div class="col-sm-6">
+								<input type="number" class="form-control form-control-md" id="simio_bcmh" name="simio_bcmh" min="0" value="0">
+								<p class="help-block">Crédit gratuit accumulé chez CMH (programme fidélité, &Charge ou autres).</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_electro">Bonus/Crédit Electroverse (€)</label>
+							<div class="col-sm-6">
+								<input type="number" class="form-control form-control-md" id="simio_electro" name="simio_electro" min="0" value="0">
+								<p class="help-block">Crédit gratuit accumulé chez Octopus Electroverse (programme fidélité, &Charge ou autres).</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_bmaingau">Bonus/Crédit Maingau (Km)</label>
+							<div class="col-sm-6">
+								<input type="number" class="form-control form-control-md" id="simio_bmaingau" name="simio_bmaingau" min="0" value="0">
+								<p class="help-block">Crédit gratuit accumulé chez Maingau (programme fidélité, &Charge ou autres).</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_belli">Bonus/Crédit Elli (€)</label>
+							<div class="col-sm-6">
+								<input type="number" class="form-control form-control-md" id="simio_belli" name="simio_belli" min="0" value="0">
+								<p class="help-block">Crédit gratuit accumulé chez Elli (programme fidélité, &Charge ou autres).</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_avec_abo">Offres avec abonnement</label>
+							<div class="col-sm-6">
+								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_avec_abo" name="simio_avec_abo" checked/>
+								<p class="help-block">Inclut aussi les offres basées sur un abonnement</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_avec_forfait">Offres avec forfait</label>
+							<div class="col-sm-6">
+								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_avec_forfait" name="simio_avec_forfait" checked/>
+								<p class="help-block">Inclut aussi les offres basées sur un forfait</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_avec_pastfuture">Offres passées</label>
+							<div class="col-sm-6">
+								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_avec_pastfuture" name="simio_avec_pastfuture" />
+								<p class="help-block">Inclut les offres passées (inactive) dans la simulation. Elles sont visualisées en grisé.</p>
+							</div>
+							<label class="col-sm-6 form-control-label" for="simio_details">Affiche les résultats détaillés</label>
+							<div class="col-sm-6">
+								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_details" name="simio_details" />
+								<p class="help-block">Cache ou affiche tous les détails des calculs. Pour un résultat compilé (option décochée) ou détaillé (option cochée).</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row bottom-buffer left-buffer">
+				<div id="simio_form_div4" class="col-sm-4">
+			  		<button type="submit" class="btn btn-primary">Simuler</button>
+				</div>
+			</div>
+		</form>
+				
+		<div class="row top-buffer bottom-big-buffer left-buffer">
+			<div id="simio_result_details_div" class="top-buffer bottom-buffer left-buffer col-11" style="display: none">
+				<ul id="simio_result_details_tabs" class="nav nav-tabs" role="tablist"></ul>
+				<div id="simio_result_details_tabs-content" class="tab-content"></div>
+			</div>
+			<div id="simio_result_notes_div" class="top-buffer bottom-buffer left-buffer col-11" style="display: none">
+			</div>
+		</div>
+	</div>
+ 
+    <script src="./lib/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+	<script src="./lib/bootstrap-4.6.2/js/bootstrap.bundle.min.js"></script>
+	<script src="./lib/bootstrap-notify-3.1.5-forked/bootstrap-notify.js"></script>
+	<script src="./lib/bootstrap-bootbox-4.4.0/bootbox.min.js"></script>	
+
+	<script src="./lib/tableExport.jquery.plugin-1.10.21/tableExport.min.js"></script>
+	<script src="./lib/tableExport.jquery.plugin-1.10.21/libs/jsPDF/jspdf.min.js"></script>
+	<script src="./lib/tableExport.jquery.plugin-1.10.21/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+	
+	<script src="./lib/bootstrap-table-1.21.2/dist/bootstrap-table.min.js"></script>
+	<script src="./lib/bootstrap-table-1.21.2/dist/locale/bootstrap-table-fr-FR.min.js"></script>
+	<script src="./lib/bootstrap-table-1.21.2/dist/extensions/export/bootstrap-table-export.min.js"></script>
+	<script src="./lib/bootstrap-table-1.21.2/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
+		
+	<script src="./js/common.js"></script>
+	<script src="./js/styler.js"></script>
+	<script src="./js/simionity.js"></script>
+</body>
+</html>
+
