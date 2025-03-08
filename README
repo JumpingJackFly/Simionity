@@ -7,7 +7,8 @@
 
 #### 4.1.0 (04/03/2025)
 - Ajout de la conservation du dernier filtre entre 2 recherches
-- Mise à jour tarifs Mobilize
+- Mise à jour tarifs FR//BE/DE
+- Limitation de la couverture à FR//BE/DE
 - Retrait des offres Tesla
 - Purge des tarifs expirés
 
