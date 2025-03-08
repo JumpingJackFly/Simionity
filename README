@@ -6,9 +6,10 @@
 ## Changelog
 
 #### 4.1.0 (04/03/2025)
+- Ajout de la conservation du dernier filtre entre 2 recherches
 - Mise à jour tarifs Mobilize
-- Désactivation des prix Tesla
-- Garde le dernier filtre en mémoire
+- Retrait des offres Tesla
+- Purge des tarifs expirés
 
 #### 4.0.0 (06/10/2024)
 - Mise à jour offres (FR)
