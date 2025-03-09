@@ -3,7 +3,8 @@
 
 ## Changelog
 
-#### 4.1.0 (04/03/2025)
+#### 4.1.0 (09/03/2025)
+- Nettoyage du code
 - Ajout de la conservation du dernier filtre entre 2 recherches
 - Mise à jour tarifs FR//BE/DE
 - Limitation de la couverture à FR//BE/DE
