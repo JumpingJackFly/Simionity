@@ -12,7 +12,6 @@ Eni
 Enel-X
 JuicePass
 TotalEnergies
-Tesla
 Freshmile
 Maingau
 Electra
@@ -32,7 +31,7 @@ IECharge
 R3
 
 
-
+Tesla
 
 
 
