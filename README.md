@@ -3,11 +3,14 @@
 
 ## Changelog
 
+#### 4.2.0 (en cours de dev)
+- 
+
 #### 4.1.0 (09/03/2025)
-- Nettoyage du code
+- Nettoyage du code pour première publication sur Github pages (https://jumpingjackfly.github.io/Simionity/)
 - Ajout de la conservation du dernier filtre entre 2 recherches
 - Mise à jour tarifs FR//BE/DE
-- Limitation de la couverture à FR//BE/DE
+- Limitation de la couverture à FR/BE/DE
 - Retrait des offres Tesla
 - Purge des tarifs expirés
 
