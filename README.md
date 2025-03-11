@@ -6,6 +6,7 @@
 #### 4.1.x (en cours)
 - 09/03/2025 - Mise à jour des tarifs ELLI (FR / BE / DE)
 - 10/03/2025 - Ajout tarifs TOTALENERGIES (FR)
+- 11/03/2025 - Mise à jour tarifs ALLEGO et ATLANTE (FR)
 
 #### 4.1.0 (09/03/2025)
 - Nettoyage du code pour première publication sur Github pages (https://jumpingjackfly.github.io/Simionity/)
