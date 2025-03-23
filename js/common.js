@@ -77,11 +77,27 @@ const _SIMTAB_COLUMN_ID_SIM_COUT_KWH_ = 'sim-cout-kwh';
 var AT_LEAST_ONE_SEVERE_NOTIF = false,
 	VUE_DETAILLEE = false, 
 	CACHED_FILTER = "";
-	
+
+const COMPACT_SIZES_SET = ['xs', 'sm', 'md'];
+
 /**
 * Formateur de cout en € par defaut
 */
 const EUROFORMATTER = new Intl.NumberFormat(_DEVICE_PAYS, {style: 'currency',currency: _DEVICE_CODE,minimumFractionDigits: _DEVICE_DEFAUT_DIGIT});
+
+/**
+* Return the size def detected by Bootstrap (see end of html page)
+*/
+function getViewSize() {
+    return $('#sizer').find('div:visible').data('size');
+}
+
+/**
+* Return true if compact view is to be used.
+*/
+function doWeCompactView() {
+	return (COMPACT_SIZES_SET.indexOf(getViewSize()) !== -1);
+}
 
 /**
  * Show notification to user as temp popup

@@ -3,7 +3,10 @@
 
 ## Changelog
 
-#### 4.1.x (en cours)
+#### 4.2.0 (23/03/2025)
+- Add (auto) compact view on mobile devices
+
+#### 4.1.x (-)
 - .4
 12/03/2025 - Ajout des tarifs pour LU
 12/03/2025 - Ajout tarifs ELECTRA (BE / LU)

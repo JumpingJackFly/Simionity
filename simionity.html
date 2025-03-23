@@ -18,7 +18,7 @@
 <body>
 	<div id="container" >
 		<div class="row top-buffer bottom-buffer left-buffer">
-			<h1>Comparateur des différentes offres d'abonnements et forfaits de recharge rapide en DC / THP</h1><span>&nbsp;<sub>v4.1.4</sub></span>
+			<h1>Comparateur des différentes offres d'abonnements et forfaits de recharge rapide en DC / THP</h1><span>&nbsp;<sub>v4.2.0</sub></span>
 		</div>
 		<br/>
 		<form id="simio_form" name="simio_form" action="" method="" autocomplete="on">
@@ -65,7 +65,7 @@
 						</div>
 					</div>					
 				</div>
-				<div class="col-sm-4 my-auto">		
+				<div class="col-sm-4 my-auto  d-none d-md-block">		
 					<img src="./img/nuage-mots-500.png" width="350px" alt="Opérateurs"> 
         		</div>
 			</div>
@@ -155,8 +155,8 @@
 								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_avec_pastfuture" name="simio_avec_pastfuture" />
 								<p class="help-block">Inclut les offres passées (inactive) dans la simulation. Elles sont visualisées en grisé.</p>
 							</div>
-							<label class="col-sm-6 form-control-label" for="simio_details">Affiche les résultats détaillés</label>
-							<div class="col-sm-6">
+							<label class="col-sm-6 form-control-label d-none d-md-block" for="simio_details">Affiche les résultats détaillés</label>
+							<div class="col-sm-6 d-none d-md-block">
 								<input type="checkbox" class="form-control form-control-md" style="width:15px;text-align:left;" id="simio_details" name="simio_details" />
 								<p class="help-block">Cache ou affiche tous les détails des calculs. Pour un résultat compilé (option décochée) ou détaillé (option cochée).</p>
 							</div>
@@ -194,10 +194,19 @@
 	<script src="./lib/bootstrap-table-1.21.2/dist/locale/bootstrap-table-fr-FR.min.js"></script>
 	<script src="./lib/bootstrap-table-1.21.2/dist/extensions/export/bootstrap-table-export.min.js"></script>
 	<script src="./lib/bootstrap-table-1.21.2/dist/extensions/sticky-header/bootstrap-table-sticky-header.min.js"></script>
-		
+
 	<script src="./js/common.js"></script>
 	<script src="./js/styler.js"></script>
 	<script src="./js/simionity.js"></script>
+
+	<div id="sizer">
+    	<div class="d-block d-sm-none d-md-none d-lg-none d-xl-none" data-size="xs"></div>
+    	<div class="d-none d-sm-block d-md-none d-lg-none d-xl-none" data-size="sm"></div>
+    	<div class="d-none d-sm-none d-md-block d-lg-none d-xl-none" data-size="md"></div>
+    	<div class="d-none d-sm-none d-md-none d-lg-block d-xl-none" data-size="lg"></div>
+    	<div class="d-none d-sm-none d-md-none d-lg-none d-xl-block" data-size="xl"></div>
+	</div>
+
 </body>
 </html>
 
