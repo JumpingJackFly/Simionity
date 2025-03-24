@@ -86,7 +86,7 @@ function fillTableAbo(pOptions, pData)  {
 						}];
 	headerInfoNbTotCol++;
 	
-	if ((doWeCompactView() == false) && (VUE_DETAILLEE === true)) {
+	if (VUE_DETAILLEE === true) {
 		tableColumns = tableColumns.concat([
 						{'field': _SIMTAB_COLUMN_ID_PRESTATAIRE_ 
 						, 'title':'Fournisseur'
@@ -112,7 +112,7 @@ function fillTableAbo(pOptions, pData)  {
 						}]);
 	headerInfoNbTotCol++;
 		
-	if (doWeCompactView() == false) {
+	if ((doWeCompactView() == false) || (VUE_DETAILLEE === true)) {
 		tableColumns = tableColumns.concat([
 						{ 'field':_SIMTAB_COLUMN_ID_PRICE_KWH
 						, 'title':'Prix kWh'
@@ -200,7 +200,7 @@ function fillTableAbo(pOptions, pData)  {
 						
 	}
 						
-	if ((doWeCompactView() == false) && (VUE_DETAILLEE === true)) {
+	if (VUE_DETAILLEE === true) {
 		tableColumns = tableColumns.concat([
 						{ 'field': _SIMTAB_COLUMN_ID_SIM_TOT_KM_
 						, 'title':'Km'
@@ -212,7 +212,7 @@ function fillTableAbo(pOptions, pData)  {
 		headerSimNbTotCol++;
 	}
 
-	if (doWeCompactView() == false) {
+	if (VUE_DETAILLEE === true) {
 		tableColumns = tableColumns.concat([
 						{ 'field': _SIMTAB_COLUMN_ID_SIM_TOT_KHW_
 						, 'title':'kWh'
@@ -224,7 +224,7 @@ function fillTableAbo(pOptions, pData)  {
 		headerSimNbTotCol++;
 	}
 							
-	if ((doWeCompactView() == false) && (VUE_DETAILLEE === true)) {
+	if (VUE_DETAILLEE === true) {
 		if (pOptions[_OPTION_AVEC_FORF] === true) {
 			tableColumns = tableColumns.concat([						
 							{ 'field':_SIMTAB_COLUMN_ID_SIM_NB_FORFAITS_
@@ -238,7 +238,8 @@ function fillTableAbo(pOptions, pData)  {
 		}
 	}
 		
-	if ((doWeCompactView() == false) && (pOptions[_OPTION_AVEC_ABO] === true)) {
+	if ( ((doWeCompactView() == false) || (VUE_DETAILLEE === true)) 
+		&& (pOptions[_OPTION_AVEC_ABO] === true) ) {
 		tableColumns = tableColumns.concat([						
 						{ 'field':_SIMTAB_COLUMN_ID_SIM_TOT_ABO_
 						, 'title':'€ Abo'
@@ -264,7 +265,7 @@ function fillTableAbo(pOptions, pData)  {
 		|| (fRistourneELLI > 0.0) || (fRistourneELECTRO > 0.0))  
 	{
 			
-		if ((doWeCompactView() == false) && (VUE_DETAILLEE === true)) {
+		if (VUE_DETAILLEE === true) {
 			tableColumns = tableColumns.concat([						
 							{ 'field':_SIMTAB_COLUMN_ID_SIM_RISTOURNE_
 							, 'title':'Ristourne'
@@ -288,7 +289,7 @@ function fillTableAbo(pOptions, pData)  {
 						}]);						
 	headerSimNbTotCol++;
 
-	if ((doWeCompactView() == false) && (VUE_DETAILLEE === true)) {
+	if (VUE_DETAILLEE === true) {
 		tableColumns = tableColumns.concat([						
 						{ 'field':_SIMTAB_COLUMN_ID_SIM_COUT_100KM_
 						, 'title':'€/100 km'
@@ -318,7 +319,8 @@ function fillTableAbo(pOptions, pData)  {
 						, 'valign': 'middle'
 						}];
 						
-	if ((doWeCompactView() == false) && (pOptions[_OPTION_AVEC_ABO] === true)) {
+	if ( ((doWeCompactView() == false) || (VUE_DETAILLEE === true)) 
+			&& (pOptions[_OPTION_AVEC_ABO] === true)) {
 		tableHeader = tableHeader.concat([					
 						{ 'field': _SIMTAB_COLUMN_ID_HABO_
 						, 'title': 'ABO'
@@ -328,7 +330,8 @@ function fillTableAbo(pOptions, pData)  {
 						}]);
 	}
 	
-	if ((doWeCompactView() == false) && (pOptions[_OPTION_AVEC_FORF] === true)) {
+	if ( ((doWeCompactView() == false) || (VUE_DETAILLEE === true))
+		&& (pOptions[_OPTION_AVEC_FORF] === true)) {
 		tableHeader = tableHeader.concat([					
 						{ 'field': _SIMTAB_COLUMN_ID_HFORFAIT_
 						, 'title': 'FORFAIT'

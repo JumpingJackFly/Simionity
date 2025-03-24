@@ -3,8 +3,11 @@
 
 ## Changelog
 
+#### 4.2.1 (24/03/2025)
+- Restoration du mode "détaillé" pour la vue compacte sur smartphones
+
 #### 4.2.0 (23/03/2025)
-- Add (auto) compact view on mobile devices
+- Ajout d'un mode (auto) compacte pour les smartphones
 
 #### 4.1.x (-)
 - .4
