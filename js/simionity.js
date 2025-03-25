@@ -78,7 +78,7 @@ function fillTableAbo(pOptions, pData)  {
 		aFiltresOperateurs = pOptions[_OPTION_FILTRES_OP];
 	
 	var tableColumns = [{'field': _SIMTAB_COLUMN_ID_POSITION_ 
-						, 'title':'Rang'
+						, 'title': (doWeCompactView() == true) ? '#': 'Rang'
 						, 'align':'center'
 						, 'falign': 'center'
 						, 'halign':'center'
@@ -98,9 +98,7 @@ function fillTableAbo(pOptions, pData)  {
 		headerInfoNbTotCol++;
 	}
 	
-	var strOffre = 'Formule - Bornes'
-	if (doWeCompactView() == true)
-		strOffre = 'Formule <br/> Bornes';
+	var strOffre = (doWeCompactView() == true) ? 'Formule <br/> Bornes' : 'Formule - Bornes';
 		
 	tableColumns = tableColumns.concat([
 						{ 'field':_SIMTAB_COLUMN_ID_OFFRE
@@ -297,7 +295,12 @@ function fillTableAbo(pOptions, pData)  {
 						, 'falign': 'right'
 						, 'halign':'left'
 						, 'sortable' : true
-						},
+						}]);						
+		headerSimNbTotCol += 1;
+	}
+			
+	if ((doWeCompactView() == true) || (VUE_DETAILLEE === true)) {
+		tableColumns = tableColumns.concat([						
 						{ 'field':_SIMTAB_COLUMN_ID_SIM_COUT_KWH_
 						, 'title':'€/kWh'
 						, 'align':'left'
@@ -305,7 +308,7 @@ function fillTableAbo(pOptions, pData)  {
 						, 'halign':'left'
 						, 'sortable' : true
 						}]);
-		headerSimNbTotCol += 2;
+		headerSimNbTotCol += 1;
 	}
 		
 	var strDateLib = new Date().toLocaleDateString("fr-FR");
@@ -343,7 +346,7 @@ function fillTableAbo(pOptions, pData)  {
 
 	tableHeader = tableHeader.concat([					
 						{ 'field': _SIMTAB_COLUMN_ID_HSIMU_
-						, 'title': 'SIMULATEUR'
+						, 'title': (doWeCompactView() == true) ? 'SIM' : 'SIMULATEUR'
 						, 'colspan': headerSimNbTotCol
 						, 'align': 'center'
 						, 'valign': 'middle'
@@ -613,12 +616,14 @@ function fillTableAbo(pOptions, pData)  {
 						rowData[_SIMTAB_COLUMN_ID_SIM_TOT_COUT_] = euroFormatter(coutTotal);
 			
 						// Cout / 100 km
-						if (VUE_DETAILLEE === true) {
-							rowData[_SIMTAB_COLUMN_ID_SIM_COUT_100KM_] = euroFormatter(coutTotal / totalKm * 100);
+						if ((doWeCompactView() == true) || (VUE_DETAILLEE === true)) {
 							rowData[_SIMTAB_COLUMN_ID_SIM_COUT_KWH_] = euroFormatter((coutTotal / totKWhConso), 3);
+							if (VUE_DETAILLEE === true){
+								rowData[_SIMTAB_COLUMN_ID_SIM_COUT_100KM_] = euroFormatter(coutTotal / totalKm * 100);								
+							}
 						}
 						
-						// offre dispo ou historique (invisible mais présent pour le styler)
+						// Offre dispo ou historique (invisible mais présent pour le styler)
 						rowData[_SIMTAB_COLUMN_ID_OFFRE_STATUS_] = uneOffre['Status'];
 											
 						tableData.push(rowData);	
