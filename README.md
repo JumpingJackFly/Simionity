@@ -3,10 +3,11 @@
 
 ## Changelog
 
-#### 4.3.0 (xx/03/2025)
+#### 4.3.0 (28/03/2025)
 - Ajout du cout / kWh dans la vue compacte 
 - Optimisation de l'affichage de la vue compacte
 - Mise à jour des librairies tierces
+- Ajout tarifs eTOTEM (FR)
 
 #### 4.2.1 (24/03/2025)
 - Restoration du mode "détaillé" pour la vue compacte sur smartphones
